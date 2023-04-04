@@ -1,0 +1,245 @@
+/* -------------- */
+/* Default Values */
+/* -------------- */
+
+/* Box Sizing */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset default Margin and Padding */
+
+*,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set default body styles */
+
+body {
+    line-height: 1.5;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    background-size: cover;
+    background-position: bottom;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+/* Images Setup */
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Form Element Setup */
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Reset list style to none */
+
+menu:not(article menu),
+ol:not(article ol),
+ul:not(article ul) {
+    list-style: none;
+}
+
+/* Reset lists padding */
+
+menu,
+ol,
+ul {
+    padding-left: 0;
+}
+
+/* Reset list markers */
+
+article ol,
+article ul {
+    list-style-position: inside;
+}
+
+/* Reset Cursor for Elements */
+
+label,
+button,
+select,
+summary,
+[type="radio"],
+[type="submit"],
+[type="checkbox"] {
+    cursor: pointer;
+}
+
+/* --------------- */
+/* Set Root Values */
+/* --------------- */
+
+:root {
+    --red: hsl(0, 100%, 66%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+    /* - Linear gradient (active input border): hsl(249, 99%, 64%) to hsl(278, 94%, 30%) */
+}
+
+/* --------------- */
+/* Utility Classes */
+/* --------------- */
+
+/* Flex Container */
+
+.flex {
+    display: flex;
+    gap: var(--gap, 2rem);
+}
+
+/* flex Center */
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+/* Grid Container */
+
+.grid {
+    display: grid;
+    gap: var(--gap, 2rem);
+    height: 100vh;
+}
+
+/* TypeScripts */
+
+.text-white {
+    color: #ffffff;
+}
+
+.text-black {
+    color: #000000;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+/* -------------- */
+/* Custom Classes */
+/* -------------- */
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* Style card Images Section */
+
+.card-image-section {
+    height: 220px;
+    background-image: url("../images/bg-main-mobile.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.card {
+    position: relative;
+    width: 375px;
+    padding-block-start: 20px;
+}
+
+.card-image {
+    width: 300px;
+}
+
+.card-back-image {
+    position: absolute;
+    right: 1rem;
+}
+
+.card-front-image {
+    position: relative;
+    top: 5.8rem;
+    left: 1rem;
+}
+
+.display-card {
+    z-index: 10000;
+    letter-spacing: 1px;
+}
+
+.display-cvv {
+    position: absolute;
+    top: 5.5rem;
+    right: 3.5rem;
+}
+
+.circle-filled {
+    width: 30px;
+    aspect-ratio: 1;
+    background-color: white;
+    border-radius: 100%;
+    position: absolute;
+    top: 8rem;
+    left: 2rem;
+}
+
+.circle-hollow {
+    width: 15px;
+    aspect-ratio: 1;
+    background-color: transparent;
+    border-radius: 100%;
+    border: 1px solid white;
+    position: absolute;
+    top: 8.5rem;
+    left: 4.5rem;
+}
+
+.display-number {
+    position: absolute;
+    word-spacing: 7px;
+    top: 12rem;
+    left: 3rem;
+}
+
+.display-name {
+    position: absolute;
+    top: 14rem;
+    left: 3rem;
+    font-size: 0.8rem;
+}
+
+.display-expiry {
+    position: absolute;
+    top: 14rem;
+    right: 5.5rem;
+    font-size: 0.8rem;
+}
+
+.form {
+    padding-block-start: 110px;
+}
