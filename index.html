@@ -50,42 +50,69 @@
                 </div>
             </div>
             <!-- Form Part -->
-            <form class="form">
+            <form class="form uppercase">
                 <!-- name of the card holder -->
-                <label for="">cardholder name</label>
-                <input
-                    type="text"
-                    name="card-name"
-                    aria-placeholder="e.g. sherlock holmes"
-                />
+                <div>
+                    <label for="">cardholder name</label>
+                    <input
+                        type="text"
+                        name="card-name"
+                        placeholder="e.g. Sherlock Holmes"
+                    />
+                </div>
                 <!-- number of the card -->
-                <label for="">card number</label>
-                <input
-                    type="number"
-                    name="card-number"
-                    aria-placeholder="e.g. 0000 1111 2222 3333"
-                />
+                <div>
+                    <label for="">card number</label>
+                    <input
+                        type="number"
+                        name="card-number"
+                        placeholder="e.g. 0000 1111 2222 3333"
+                    />
+                </div>
                 <!-- expiry date -->
-                <label for="">exp. date (mm/yy)</label>
-                <input type="number" name="month" aria-placeholder="mm" />
-                <input type="number" name="year" aria-placeholder="yy" />
+                <div class="expiry">
+                    <label for="">exp. date (mm/yy)</label>
+                    <input
+                        class="month-input"
+                        type="number"
+                        name="month"
+                        placeholder="MM"
+                    />
+                    <input
+                        class="year-input"
+                        type="number"
+                        name="year"
+                        placeholder="YY"
+                    />
+                </div>
                 <!-- cvv -->
-                <label for="">cvv</label>
-                <input
-                    type="number"
-                    name="cvv-number"
-                    aria-placeholder="e.e. 123"
-                />
-                <button type="submit">confirm</button>
+                <div class="cvv">
+                    <label for="">cvv</label>
+                    <input
+                        class="cvv-input"
+                        type="number"
+                        name="cvv-number"
+                        placeholder="e.g. 123"
+                    />
+                </div>
+                <button class="capitalize" type="submit">confirm</button>
             </form>
-            <footer class="attribution">
-                Challenge by
-                <a
-                    href="https://www.frontendmentor.io?ref=challenge"
-                    target="_blank"
-                    >Frontend Mentor</a
-                >. Coded by <a href="#">Yash Pathik</a>.
-            </footer>
+            <section class="thank-you">
+                <div class="tick-image flex">
+                    <img src="./images/icon-complete.svg" alt="" />
+                </div>
+                <h1 class="uppercase">thank you !</h1>
+                <p>We've added your card details</p>
+                <button class="capitalize" type="submit">continue</button>
+            </section>
         </div>
+        <footer class="attribution">
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. Coded by <a href="#">Yash Pathik</a>.
+        </footer>
     </body>
 </html>

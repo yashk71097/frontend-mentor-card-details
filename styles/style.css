@@ -170,6 +170,7 @@ summary,
     position: relative;
     width: 375px;
     padding-block-start: 20px;
+    margin-inline: auto;
 }
 
 .card-image {
@@ -240,6 +241,159 @@ summary,
     font-size: 0.8rem;
 }
 
+/* Style Form Section */
+
 .form {
     padding-block-start: 110px;
+    padding-inline: 20px;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
+
+.form > * {
+    margin-bottom: 30px;
+}
+
+label {
+    color: var(--very-dark-violet);
+}
+
+input {
+    width: 100%;
+    height: 50px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: 1px solid var(--light-grayish-violet);
+    border-radius: 8px;
+    font-family: sans-serif;
+    font-size: 1rem;
+}
+
+.expiry {
+    width: 50%;
+    display: inline-block;
+}
+
+.expiry > label {
+    display: block;
+}
+
+.month-input {
+    width: 47%;
+    display: inline-block;
+}
+
+.year-input {
+    width: 47%;
+    display: inline-block;
+}
+
+.cvv {
+    width: 48%;
+    display: inline-block;
+}
+
+input::placeholder {
+    color: var(--light-grayish-violet);
+}
+
+button {
+    width: 100%;
+    color: var(--light-grayish-violet);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    padding-block: 10px;
+    margin-top: 20px;
+    background-color: var(--very-dark-violet);
+    border: 1px solid var(--very-dark-violet);
+    border-radius: 8px;
+}
+
+.thank-you {
+    padding-block-start: 110px;
+    padding-inline: 20px;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    text-align: center;
+    display: none;
+}
+
+.tick-image {
+    justify-content: center;
+}
+
+.thank-you h1 {
+    margin-block: 20px;
+    font-size: 2rem;
+}
+
+.thank-you p {
+    margin-bottom: 30px;
+}
+
+/* ------------- */
+/* Media queries */
+/* ------------- */
+
+/* When screen size increases than 767px */
+
+@media (min-width: 890px) {
+    .wrapper {
+        display: flex;
+        gap: 12rem;
+    }
+
+    .card-image-section {
+        height: 100vh;
+        background-image: url("../images/bg-main-desktop.png");
+    }
+
+    .card-image {
+        width: 100%;
+    }
+
+    .card-front-image {
+        left: 4rem;
+    }
+
+    .card-back-image {
+        top: 22rem;
+        left: 10rem;
+    }
+
+    .display-cvv {
+        top: 27.5rem;
+        left: 27.5rem;
+    }
+
+    .circle-filled {
+        top: 8rem;
+        left: 5rem;
+    }
+
+    .circle-hollow {
+        top: 8.5rem;
+        left: 7.5rem;
+    }
+
+    .display-number {
+        top: 14rem;
+        left: 6rem;
+        font-size: 1.3rem;
+    }
+
+    .display-name {
+        top: 17rem;
+        left: 6rem;
+    }
+
+    .display-expiry {
+        top: 17rem;
+        right: 0.5rem;
+    }
+
+    .thank-you {
+        width: 100%;
+        padding-top: 200px;
+    }
 }
