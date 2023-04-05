@@ -50,50 +50,63 @@
                 </div>
             </div>
             <!-- Form Part -->
-            <form class="form uppercase">
+            <form class="form uppercase" id="form" action="/">
                 <!-- name of the card holder -->
                 <div>
                     <label for="">cardholder name</label>
                     <input
+                        id="name"
                         type="text"
                         name="card-name"
                         placeholder="e.g. Sherlock Holmes"
                     />
+                    <div class="error" id="name-error"></div>
                 </div>
                 <!-- number of the card -->
                 <div>
                     <label for="">card number</label>
                     <input
+                        id="number"
                         type="number"
                         name="card-number"
+                        onKeyPress="if(this.value.length===16) return false;"
                         placeholder="e.g. 0000 1111 2222 3333"
                     />
+                    <div class="error" id="number-error"></div>
                 </div>
                 <!-- expiry date -->
                 <div class="expiry">
                     <label for="">exp. date (mm/yy)</label>
                     <input
+                        id="month"
                         class="month-input"
                         type="number"
-                        name="month"
+                        name="card-month"
+                        onKeyPress="if(this.value.length===2) return false;"
                         placeholder="MM"
                     />
                     <input
+                        id="year"
                         class="year-input"
                         type="number"
-                        name="year"
+                        name="card-year"
+                        onKeyPress="if(this.value.length===2) return false;"
                         placeholder="YY"
                     />
+                    <div class="error" id="expiry-error"></div>
                 </div>
                 <!-- cvv -->
                 <div class="cvv">
                     <label for="">cvv</label>
                     <input
+                        id="cvv"
                         class="cvv-input"
                         type="number"
-                        name="cvv-number"
+                        name="card-cvv"
+                        onKeyPress="if(this.value.length===3) return false;"
                         placeholder="e.g. 123"
                     />
+                    <div class="error" id="cvv-error"></div>
                 </div>
                 <button class="capitalize" type="submit">confirm</button>
             </form>
@@ -103,7 +116,9 @@
                 </div>
                 <h1 class="uppercase">thank you !</h1>
                 <p>We've added your card details</p>
-                <button class="capitalize" type="submit">continue</button>
+                <button id="submit-btn" class="capitalize" type="submit">
+                    continue
+                </button>
             </section>
         </div>
         <footer class="attribution">
@@ -114,5 +129,6 @@
                 >Frontend Mentor</a
             >. Coded by <a href="#">Yash Pathik</a>.
         </footer>
+        <script src="./scripts/script.js"></script>
     </body>
 </html>

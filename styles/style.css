@@ -269,6 +269,11 @@ input {
     font-size: 1rem;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    appearance: none;
+}
+
 .expiry {
     width: 50%;
     display: inline-block;
@@ -307,6 +312,12 @@ button {
     background-color: var(--very-dark-violet);
     border: 1px solid var(--very-dark-violet);
     border-radius: 8px;
+}
+
+.error {
+    text-transform: capitalize;
+    color: red;
+    font-size: 0.8rem;
 }
 
 .thank-you {
