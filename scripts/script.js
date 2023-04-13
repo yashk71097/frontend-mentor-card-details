@@ -12,7 +12,9 @@ const expiryYear = document.getElementById("year");
 
 const cardCvv = document.getElementById("cvv");
 
-const submitButton = document.getElementById("submit-btn");
+const confirmButton = document.getElementById("confirm-btn");
+
+const continueButton = document.getElementById("continue-btn");
 
 // Grabbing error messages field
 
@@ -45,6 +47,9 @@ function displayNameFunc() {
     clientName = cardName.value;
     nameDisplay.textContent = clientName;
     nameDisplay.style.textTransform = "uppercase";
+    if (clientName === "") {
+        nameDisplay.textContent = "xxxx xxxxxxx";
+    }
 }
 
 // Function to display credit card number.
@@ -57,6 +62,9 @@ function displayNumberFunc() {
     }
     const formatNumberDisplay = space(clientNumber);
     numberDisplay.textContent = formatNumberDisplay;
+    if (clientNumber === "") {
+        numberDisplay.textContent = "0000 0000 0000 0000";
+    }
 }
 
 // Function to display credit card expiry.
@@ -69,6 +77,9 @@ function displayCardExpiryFunc() {
     clientYear = expiryYear.value;
     clientExpiry = clientMonth + "/" + clientYear;
     expiryDisplay.textContent = clientExpiry;
+    if (clientMonth === "" && clientYear === "") {
+        expiryDisplay.textContent = "00/00";
+    }
 }
 
 // Function to displat credit card cvv.
@@ -77,6 +88,9 @@ let clientCvv = 0;
 function displayCvvFunc() {
     clientCvv = cardCvv.value;
     cvvDisplay.textContent = clientCvv;
+    if (clientCvv === "") {
+        cvvDisplay.textContent = "000";
+    }
 }
 
 cardName.addEventListener("input", displayNameFunc);
@@ -85,4 +99,109 @@ expiryMonth.addEventListener("input", displayCardExpiryFunc);
 expiryYear.addEventListener("input", displayCardExpiryFunc);
 cardCvv.addEventListener("input", displayCvvFunc);
 
+// Stop form to submit when clicked on submit button
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+});
+
+// Function to validate name
+
+function validateName() {
+    if (cardName.value === "") {
+        nameError.textContent = "please enter name.";
+        return false;
+    } else {
+        nameError.textContent = "";
+    }
+    return true;
+}
+
+// Function to validate credit card number
+
+function validateCreditCardNumber() {
+    if (cardNumber.value === "") {
+        numberError.textContent = "please enter credit card number.";
+        return false;
+    }
+    if (cardNumber.value.length != 16) {
+        numberError.textContent = "not a valid credit card number !";
+        return false;
+    } else {
+        numberError.textContent = "";
+    }
+    return true;
+}
+
+// Function to validate expiry date.
+
+function validateExpiry() {
+    if (expiryMonth.value === "" || expiryYear.value === "") {
+        expiryError.textContent = "please enter expiry.";
+        return false;
+    }
+    if (expiryMonth.value.length != 2 || expiryYear.value.length != 2) {
+        expiryError.textContent = "wrong input !";
+        return false;
+    } else {
+        expiryError.textContent = "";
+    }
+    return true;
+}
+
+// Function to validate cvv code.
+
+function validateCvv() {
+    if (cardCvv.value === "") {
+        cvvError.textContent = "please enter cvv.";
+        return false;
+    }
+    if (cardCvv.value.length != 3) {
+        cvvError.textContent = "wrong input !";
+        return false;
+    } else {
+        cvvError.textContent = "";
+    }
+    return true;
+}
+
 // Function to validate form.
+
+function validateForm() {
+    validateName();
+    validateCreditCardNumber();
+    validateExpiry();
+    validateCvv();
+    if (
+        !validateName() ||
+        !validateCreditCardNumber() ||
+        !validateExpiry() ||
+        !validateCvv()
+    ) {
+        return false;
+    } else {
+        form.style.display = "none";
+        success.style.display = "block";
+        return true;
+    }
+}
+
+// What happens when the confirm button is clicked.
+
+confirmButton.addEventListener("click", validateForm);
+
+// What happens when the continue button is clicked.
+
+continueButton.addEventListener("click", () => {
+    success.style.display = "none";
+    form.style.display = "block";
+    nameDisplay.textContent = "xxxx xxxxxxx";
+    cardName.value = "";
+    numberDisplay.textContent = "0000 0000 0000 0000";
+    cardNumber.value = "";
+    expiryDisplay.textContent = "00/00";
+    expiryMonth.value = "";
+    expiryYear.value = "";
+    cvvDisplay.textContent = "000";
+    cardCvv.value = "";
+});

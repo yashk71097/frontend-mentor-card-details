@@ -149,14 +149,6 @@ summary,
 /* Custom Classes */
 /* -------------- */
 
-.attribution {
-    font-size: 11px;
-    text-align: center;
-}
-.attribution a {
-    color: hsl(228, 45%, 44%);
-}
-
 /* Style card Images Section */
 
 .card-image-section {
@@ -244,6 +236,7 @@ summary,
 /* Style Form Section */
 
 .form {
+    display: block;
     padding-block-start: 110px;
     padding-inline: 20px;
     letter-spacing: 2px;
@@ -318,6 +311,7 @@ button {
     text-transform: capitalize;
     color: red;
     font-size: 0.8rem;
+    position: absolute;
 }
 
 .thank-you {
@@ -340,6 +334,15 @@ button {
 
 .thank-you p {
     margin-bottom: 30px;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-top: 40px;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
 }
 
 /* ------------- */

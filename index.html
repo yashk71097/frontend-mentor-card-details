@@ -50,7 +50,7 @@
                 </div>
             </div>
             <!-- Form Part -->
-            <form class="form uppercase" id="form" action="/">
+            <form class="form uppercase" id="form">
                 <!-- name of the card holder -->
                 <div>
                     <label for="">cardholder name</label>
@@ -108,7 +108,9 @@
                     />
                     <div class="error" id="cvv-error"></div>
                 </div>
-                <button class="capitalize" type="submit">confirm</button>
+                <button class="capitalize" id="confirm-btn" type="submit">
+                    confirm
+                </button>
             </form>
             <section class="thank-you">
                 <div class="tick-image flex">
@@ -116,7 +118,7 @@
                 </div>
                 <h1 class="uppercase">thank you !</h1>
                 <p>We've added your card details</p>
-                <button id="submit-btn" class="capitalize" type="submit">
+                <button id="continue-btn" class="capitalize" type="submit">
                     continue
                 </button>
             </section>
